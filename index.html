@@ -1,12 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex R — Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex R — Portfolio</title>
+  <meta name="description" content="Designer & creative technologist — selected work, writing, and contact." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b0d12; --panel:#0f1220; --text:#e6e8ee; --muted:#a0a6b5; --brand:#6d28d9; --brand-2:#0891b2; --card:#101322; --stroke:#21263a; --ring:#7c3aed55; }
+    [data-theme="light"] { --bg:#ffffff; --panel:#f7f8fb; --text:#0b0d12; --muted:#4b5563; --brand:#6d28d9; --brand-2:#0891b2; --card:#ffffff; --stroke:#e5e7eb; --ring:#7c3aed33; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(124,58,237,.25), transparent),radial-gradient(1000px 600px at -10% 20%, rgba(6,182,212,.2), transparent),var(--bg);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .container{width:min(1120px,92vw);margin:0 auto}
+    header.site{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(8px);background:rgba(0,0,0,.2);border-bottom:1px solid var(--stroke)}
+    .nav{display:flex;align-items:center;gap:16px;padding:14px 0}
+    .brand{font-weight:800;letter-spacing:-.02em;font-size:18px;display:flex;align-items:center;gap:10px}
+    .brand-logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:800}
+    .spacer{flex:1}
+    .nav a{padding:8px 12px;border-radius:10px;border:1px solid transparent}
+    .nav a:hover{border-color:var(--stroke);background:rgba(255,255,255,.02)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--stroke);background:linear-gradient(180deg, rgba(255,255,255,.02), var(--card));box-shadow:0 1px 0 #0003 inset,0 10px 30px #0002;cursor:pointer}
+    .btn:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding:72px 0 48px;align-items:center}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;gap:24px}}
+    .kicker{text-transform:uppercase;font-size:12px;letter-spacing:.16em;color:var(--muted)}
+    h1{font-size:clamp(34px,5vw,56px);line-height:1.08;margin:10px 0 16px;letter-spacing:-.02em}
+    .lead{font-size:clamp(16px,2.4vw,19px);color:var(--muted)}
+    .chiprow{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px}
+    .chip{padding:8px 12px;border:1px solid var(--stroke);border-radius:999px;font-size:13px;background:rgba(255,255,255,.02)}
+    .statbar{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .stat{padding:14px;border:1px solid var(--stroke);border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,.01), var(--card));text-align:center}
+    .stat strong{display:block;font-size:22px}
+    .poster{aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid var(--stroke);position:relative;background:radial-gradient(60% 80% at 70% 20%, color-mix(in oklab, var(--brand), #000 30%), transparent),radial-gradient(60% 60% at 0% 100%, color-mix(in oklab, var(--brand-2), #000 20%), transparent),linear-gradient(145deg,#0f1220,#0a0c15)}
+    .poster::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,#ffffff10 0 1px,transparent 1px 10px);mix-blend-mode:overlay;opacity:.3}
+    section{padding:56px 0}
+    .section-title{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}
+    .section-title h2{font-size:clamp(22px,3vw,32px);margin:0;letter-spacing:-.01em}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column:span 4;border:1px solid var(--stroke);border-radius:16px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,.01), var(--card));transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 30px #0000002a}
+    @media (max-width:980px){.card{grid-column:span 6}}
+    @media (max-width:640px){.card{grid-column:span 12}}
+    .thumb{aspect-ratio:16/10;background:conic-gradient(from 180deg at 70% 30%, var(--brand), var(--brand-2), var(--brand), var(--brand-2));filter:saturate(.9) contrast(.9);position:relative}
+    .thumb svg{position:absolute;inset:12px;opacity:.2}
+    .card-body{padding:14px 14px 16px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--muted)}
+    .title{font-weight:700;letter-spacing:-.01em;margin:6px 0 6px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tags span{font-size:12px;border:1px solid var(--stroke);padding:6px 10px;border-radius:999px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media (max-width:900px){.about{grid-template-columns:1fr}}
+    .about-card{border:1px solid var(--stroke);border-radius:16px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,.01), var(--card))}
+    footer{border-top:1px solid var(--stroke);padding:28px 0 48px;color:var(--muted)}
+    .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .icon{width:18px;height:18px;display:inline-block}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
 </head>
 <body>
-<h1>Alex R — Portfolio</h1>
-<p>Designer & Creative Technologist. Contact: <a href="mailto:lexandesign@mail.com">lexandesign@mail.com</a></p>
+  <header class="site">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Home"><span class="brand-logo" aria-hidden="true">AR</span><span>Alex R</span></a>
+      <div class="spacer"></div>
+      <nav class="row" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="btn" id="modeBtn" type="button" aria-pressed="false" title="Toggle theme"><span class="icon" aria-hidden="true">🌗</span><span class="label">Theme</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" aria-labelledby="intro-heading">
+      <div>
+        <div class="kicker">Designer · Creative Technologist</div>
+        <h1 id="intro-heading">Designing clear, useful systems at the intersection of product, code, and hardware.</h1>
+        <p class="lead">I build evidence‑led products that merge industrial design, UX/UI, and emergent tech (AI, IoT, Web3). My focus is simple: ship well‑made tools that improve how people learn, work, and move through the world.</p>
+        <div class="chiprow" aria-label="Core skills">
+          <span class="chip">Product Design</span>
+          <span class="chip">UX/UI</span>
+          <span class="chip">Prototyping</span>
+          <span class="chip">AI & Web</span>
+          <span class="chip">AR/VR</span>
+        </div>
+        <div class="row">
+          <a class="btn" href="#work">View work</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+        <div class="statbar" role="list" aria-label="Highlights">
+          <div class="stat" role="listitem"><strong>8+ yrs</strong> in design</div>
+          <div class="stat" role="listitem"><strong>CSM</strong> MA Industry 5.0</div>
+          <div class="stat" role="listitem"><strong>Founder</strong> Lexan Design</div>
+        </div>
+      </div>
+      <div class="poster" aria-hidden="true"></div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-title">
+        <h2 id="work-title">Selected Work</h2>
+        <a class="btn" href="#">Download Portfolio PDF</a>
+      </div>
+      <div class="grid">
+        <article class="card" aria-labelledby="p1-title">
+          <div class="thumb">
+            <svg viewBox="0 0 100 60" preserveAspectRatio="none"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#ffffff18" stroke-width="0.5"/></pattern></defs><rect width="100" height="60" fill="url(#grid)"></rect></svg>
+          </div>
+          <div class="card-body">
+            <div class="eyebrow">AI Learning Tool</div>
+            <h3 class="title" id="p1-title">HyperLink</h3>
+            <p class="muted">A tactile study companion that pairs a physical device with an app for spaced repetition and concept retrieval. Designed end‑to‑end: product, brand, and iOS prototype.</p>
+            <div class="tags"><span>Product</span><span>iOS</span><span>Figma</span><span>LLM</span></div>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p2-title">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <div class="eyebrow">Wearable · AR</div>
+            <h3 class="title" id="p2-title">Reality X</h3>
+            <p class="muted">A concept AR headset exploring micro‑LED modules, compact optics, and a modular I/O rail. Work spans enclosure design, ergonomic studies, and spatial UI experiments.</p>
+            <div class="tags"><span>Hardware</span><span>CAD</span><span>AR</span></div>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p3-title">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <div class="eyebrow">IoT · Ambient UX</div>
+            <h3 class="title" id="p3-title">Sentient</h3>
+            <p class="muted">A smart diffuser linking scent to media cues (music/video), with responsive light and schedules. Built as a connected object with firmware + React dashboard.</p>
+            <div class="tags"><span>Industrial</span><span>React</span><span>Firmware</span></div>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p4-title">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <div class="eyebrow">Safety · Service Design</div>
+            <h3 class="title" id="p4-title">One Voice</h3>
+            <p class="muted">A construction‑site mask translator that enables quick cross‑language communication and improves safety compliance. Concept through to UX flow and hardware feasibility.</p>
+            <div class="tags"><span>UX</span><span>Edge AI</span><span>R&D</span></div>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p5-title">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <div class="eyebrow">Mobility · Concept</div>
+            <h3 class="title" id="p5-title">Lexan Motors</h3>
+            <p class="muted">A 3D‑printed EV body concept combining retro‑futurist form with modular panels for faster iteration and lower tooling cost. Ongoing aero + assembly research.</p>
+            <div class="tags"><span>CAD</span><span>3D Print</span><span>Prototype</span></div>
+          </div>
+        </article>
+        <article class="card" aria-labelledby="p6-title">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <div class="eyebrow">Productivity · AI</div>
+            <h3 class="title" id="p6-title">BlueSky</h3>
+            <p class="muted">A planner that blends calendar, habit learning, and journaling with an AI scheduler. Visual language inspired by refined, minimal UI systems.</p>
+            <div class="tags"><span>UX/UI</span><span>Next.js</span><span>AI</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-title">
+        <h2 id="about-title">About</h2>
+        <div class="muted">London · Open to collaborative projects and advisory</div>
+      </div>
+      <div class="about">
+        <div class="about-card">
+          <h3>Profile</h3>
+          <p>Designer & creative technologist on the MA <em>Design for Industry 5.0</em> at Central Saint Martins (CSM). Founder of Lexan Design. I work across industrial design, UX/UI, and prototyping to take ideas from research to functional proof‑of‑concepts.</p>
+          <p>My practice combines physical and digital craft: 3D printing and electronics, with modern web stacks and AI. I’m interested in tools that are practical, respectful of users, and designed with long‑term impact in mind.</p>
+        </div>
+        <div class="about-card">
+          <h3>Capabilities</h3>
+          <ul>
+            <li>Product strategy · discovery · roadmapping</li>
+            <li>UX writing · wireframes · interaction design · design systems</li>
+            <li>Industrial design · CAD · 3D printing · basic electronics/firmware</li>
+            <li>Prototyping with HTML/CSS/JS, React, Node, Next.js</li>
+            <li>Brand systems and visual direction</li>
+          </ul>
+          <h3 style="margin-top:12px">Highlights</h3>
+          <ul>
+            <li>8+ years in design; led a 17‑person startup team (Ultraviolet) that received leadership recognition.</li>
+            <li>Projects span AI education tools, AR wearables, safety tech, and mobility concepts.</li>
+            <li>Active in London’s design/tech community; open to talks and collaborative research.</li>
+          </ul>
+          <div class="row" style="margin-top:12px">
+            <a class="btn" href="#" download>Download CV</a>
+            <a class="btn" href="mailto:lexandesign@mail.com">Email me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="section-title">
+        <h2 id="contact-title">Contact</h2>
+        <div class="muted">For collaborations, freelance, or speaking</div>
+      </div>
+      <form class="about-card" onsubmit="return false" id="contactForm">
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required data-testid="name" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke); background: var(--card); color: var(--text); margin-bottom:10px"/>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="Email" required data-testid="email" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke); background: var(--card); color: var(--text); margin-bottom:10px"/>
+        <label class="sr-only" for="msg">Message</label>
+        <textarea id="msg" name="message" placeholder="Tell me a little about your project…" rows="5" required data-testid="message" style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--stroke); background: var(--card); color: var(--text);"></textarea>
+        <div class="row" style="margin-top:12px">
+          <button class="btn" type="submit" id="sendBtn" data-testid="send">Send message</button>
+          <span class="muted" id="formStatus" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container row" style="justify-content: space-between;">
+      <div>© <span id="year"></span> Alex R</div>
+      <div class="row">
+        <a class="btn" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://x.com" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (()=>{ 'use strict';
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const AR = window.AR = window.AR || {};
+
+    AR.buildMailto = function(name, email, message, to='lexandesign@mail.com'){
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      return `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent('Portfolio enquiry')}&body=${body}`;
+    }
+
+    function getStoredTheme(){ try { return localStorage.getItem('theme'); } catch { return null; } }
+    function setStoredTheme(val){ try { localStorage.setItem('theme', val); } catch {} }
+
+    function applyInitialTheme(){
+      const root = document.documentElement;
+      const stored = getStoredTheme();
+      if(stored){ root.setAttribute('data-theme', stored); }
+    }
+
+    function initThemeToggle(){
+      const root = document.documentElement;
+      const btn = $('#modeBtn');
+      if(!btn) return;
+      btn.addEventListener('click', () => {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        const next = isLight ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        setStoredTheme(next);
+        btn.setAttribute('aria-pressed', String(next==='light'));
+      });
+    }
+
+    function initForm(){
+      const form = $('#contactForm');
+      const status = $('#formStatus');
+      const sendBtn = $('#sendBtn');
+      if(!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const name = $('#name').value.trim();
+        const email = $('#email').value.trim();
+        const message = $('#msg').value.trim();
+        if(!name || !email || !message){ status.textContent = 'Please fill in all fields.'; return; }
+        const url = AR.buildMailto(name,email,message);
+        status.textContent = 'Opening your email client…';
+        setTimeout(()=>{ window.location.href = url; }, 10);
+      });
+      if(sendBtn){ sendBtn.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ sendBtn.click(); } }); }
+    }
+
+    function setYear(){ const y = new Date().getFullYear(); const el = $('#year'); if(el) el.textContent = String(y); }
+
+    function init(){
+      applyInitialTheme();
+      initThemeToggle();
+      initForm();
+      setYear();
+    }
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+  </script>
 </body>
 </html>
